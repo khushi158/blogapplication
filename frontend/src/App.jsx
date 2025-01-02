@@ -13,7 +13,7 @@ const App = () => {
   // Fetch blogs from backend
   const fetchBlogs = async () => {
     try {
-      const res = await fetch("http://localhost:3001/users/blog");
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/users/blog`);
       if (!res.ok) throw new Error("Failed to fetch blogs");
       const data = await res.json();
       setBlogs(data);
@@ -34,7 +34,7 @@ const App = () => {
     }
   
     try {
-      const res = await fetch("http://localhost:3001/users/blogs", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/users/blogs`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ blogContent: input, username: userData.email }), // Include the user's email
@@ -53,7 +53,7 @@ const App = () => {
     console.log("Blog ID:", blogId, "Action:", action);  // Add logging here
     
     try {
-      const res = await fetch("http://localhost:3001/users/blogs/reaction", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/users/blogs/reaction`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ blogId, action, username: userData.email }),
@@ -69,7 +69,7 @@ const App = () => {
   
   const handleDelete = async (blogId) => {
     try {
-      const res = await fetch(`http://localhost:3001/users/blogs/${blogId}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/users/blogs/${blogId}`, {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ userEmail: userData.email }), // Pass logged-in user's email
