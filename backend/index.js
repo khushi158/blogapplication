@@ -1,5 +1,7 @@
 const express = require('express');
 const cors = require('cors');
+const path=require("path");
+
 const usersRoutes = require('./routes/users'); // Import user routes
 
 const app = express(); // Create an Express application instance
