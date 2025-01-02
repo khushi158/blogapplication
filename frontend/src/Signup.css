@@ -1,0 +1,93 @@
+/* General Page Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #ff9966, #ff5e62);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+}
+
+/* Signup Container */
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+/* Card Styles */
+.signup-card {
+    background: #ffffff;
+    color: #333;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+}
+
+/* Title and Subtitle */
+.signup-title {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.signup-subtitle {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    color: #777;
+}
+
+/* Input Fields */
+.signup-input {
+    width: 100%;
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.signup-input:focus {
+    border-color: #ff9966;
+    box-shadow: 0px 0px 4px rgba(255, 153, 102, 0.5);
+}
+
+/* Buttons */
+.signup-button, .login-button {
+    width: 100%;
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    background: #ff5e62;
+    border: none;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.signup-button:hover, .login-button:hover {
+    background: #ff9966;
+}
+
+/* Divider */
+.divider {
+    margin: 1rem 0;
+    font-size: 1rem;
+    color: #888;
+}
+
+/* Message Styling */
+.signup-message {
+    color: #e74c3c;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
