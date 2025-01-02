@@ -3,11 +3,17 @@ const cors = require('cors');
 const usersRoutes = require('./routes/users'); // Import user routes
 
 const app = express(); // Create an Express application instance
-
-
-// Middleware
-app.use(cors());
+app.use(cors({
+  origin: '*', // Allow all origins
+  methods: 'GET,POST,PUT,DELETE', // Allow these HTTP methods
+  credentials: false, // Disable cookies/authorization headers for all origins
+}));
 app.use(express.json());
+app.use(express.static(path.join(__dirname,"build")));
+app.get("/",(req,res)=>{
+  res.sendFile(path.join(__dirname,"build/index.html"));
+})
+
 
 // MongoDB Connection
 const { MongoClient, ServerApiVersion } = require('mongodb');
